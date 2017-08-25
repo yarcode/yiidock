@@ -35,4 +35,4 @@ docker-compose up -d nginx
 Now app must be working:
 
 * frontend app: [http://localhost:8001](http://localhost:8001)
-* backend app: [http://localhost:8001](http://localhost:8001)
+* backend app: [http://localhost:8002](http://localhost:8002)
