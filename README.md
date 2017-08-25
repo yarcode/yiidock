@@ -1,4 +1,4 @@
-# yiidock #
+# Docker environment for Yii2 #
 
 ## Installation ##
 
