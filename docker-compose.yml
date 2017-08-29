@@ -50,6 +50,18 @@ services:
       - DB_USERNAME
       - DB_PASSWORD
 
+  yii:
+    build:
+      context: ./workspace
+      dockerfile: "Dockerfile-${PHP_VERSION}"
+    volumes_from:
+      - vol_app_source
+    environment:
+      - DB_DSN
+      - DB_USERNAME
+      - DB_PASSWORD
+    entrypoint: ["php", "yii"]
+
   nginx:
     build:
         context: ./nginx
