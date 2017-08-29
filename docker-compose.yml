@@ -45,6 +45,8 @@ services:
       dockerfile: "Dockerfile-${PHP_VERSION}"
     volumes_from:
       - vol_app_source
+    depends_on:
+      - postgres
     environment:
       - DB_DSN
       - DB_USERNAME
@@ -56,11 +58,13 @@ services:
       dockerfile: "Dockerfile-${PHP_VERSION}"
     volumes_from:
       - vol_app_source
+    depends_on:
+      - postgres
+    entrypoint: ["php", "yii"]
     environment:
       - DB_DSN
       - DB_USERNAME
       - DB_PASSWORD
-    entrypoint: ["php", "yii"]
 
   nginx:
     build:
