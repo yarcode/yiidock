@@ -24,7 +24,7 @@ By default yiidock uses following configuration:
 
 Apply the migrations:
 ```
-docker-compose run --rm workspace php yii migrate
+docker-compose run --rm yii migrate
 ```
 
 Start the containers:
