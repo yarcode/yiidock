@@ -74,7 +74,7 @@ services:
     volumes_from:
       - vol_app_source
     ports:
-      - 8001:8001
+      - 8002:8002
 
   nginx-frontend:
     build:
@@ -84,7 +84,7 @@ services:
     volumes_from:
       - vol_app_source
     ports:
-      - 8002:8002
+      - 8001:8001
 
 volumes:
   postgres_data:
