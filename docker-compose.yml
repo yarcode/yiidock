@@ -77,6 +77,8 @@ services:
   nginx-frontend:
     build:
       context: ./nginx-frontend
+    depends_on:
+      - php-fpm
     volumes_from:
       - vol_app_source
     ports:
