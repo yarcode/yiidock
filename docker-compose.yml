@@ -71,11 +71,28 @@ services:
         context: ./nginx
     depends_on:
       - php-fpm
-    ports:
-      - 8001:8001
-      - 8002:8002
     volumes_from:
       - vol_app_source
+
+  nginx-backend:
+    build:
+      context: ./nginx-backend
+    volumes_from:
+      - vol_app_source
+    ports:
+      - 8001:8001
+    depends_on:
+      - nginx
+
+  nginx-frontend:
+    build:
+      context: ./nginx-frontend
+    volumes_from:
+      - vol_app_source
+    ports:
+      - 8002:8002
+    depends_on:
+      - nginx
 
 volumes:
   postgres_data:
