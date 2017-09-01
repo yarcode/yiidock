@@ -69,6 +69,8 @@ services:
   nginx-backend:
     build:
       context: ./nginx-backend
+    depends_on:
+      - php-fpm
     volumes_from:
       - vol_app_source
     ports:
