@@ -29,7 +29,7 @@ docker-compose run --rm yii migrate
 
 Start the containers:
 ```
-docker-compose up -d nginx
+docker-compose up -d nginx-backend nginx-frontend
 ```
 
 Now app must be working:
